@@ -23,6 +23,8 @@ import java.util.List;
 @Builder
 public class User implements UserDetails {
 
+    // TODO: check why in the db I have more boolean values than I need and how to set them default
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
@@ -36,7 +38,7 @@ public class User implements UserDetails {
 
     @NotBlank(message = "The email field can't be blank")
     @Column(unique = true)
-    @Email(message = "Please enter email in proper format!")
+    @Email(message = "Please enter email in proper format")
     private String email;
 
     @NotBlank(message = "The password field can't be blank")
@@ -46,12 +48,8 @@ public class User implements UserDetails {
     @OneToOne(mappedBy = "user")
     private RefreshToken refreshToken;
 
-    @OneToOne(mappedBy = "user")
-    private ForgotPassword forgotPassword;
-
     @Enumerated(EnumType.STRING)
     private UserRole role;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
