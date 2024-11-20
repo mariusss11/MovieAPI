@@ -24,6 +24,7 @@ import java.util.List;
 public class User implements UserDetails {
 
     // TODO: check why in the db I have more boolean values than I need and how to set them default
+    // TODO: look after the table creations and the tables in it, the boolean conditions especially
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
