@@ -1,4 +1,4 @@
-package com.movieflex.auth.config;
+package com.movieflex.config;
 
 import com.movieflex.auth.repositories.UserRepository;
 import org.springframework.context.annotation.Bean;
